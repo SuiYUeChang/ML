@@ -15,6 +15,8 @@ import matplotlib.pyplot as plt
 
 from sklearn.metrics import r2_score
 
+#总结线性回归
+# http://blog.csdn.net/puqutogether/article/details/40889719
 ###############################################################################
 # generate some sparse data to play with
 np.random.seed(42)
@@ -24,7 +26,7 @@ X = np.random.randn(n_samples, n_features)
 coef = 3 * np.random.randn(n_features)
 inds = np.arange(n_features)
 np.random.shuffle(inds)
-coef[inds[10:]] = 0  # sparsify coef
+coef[inds[10:]] = 0  # sparsify coef #表示系数加入了稀疏的约束
 y = np.dot(X, coef)
 
 # add noise
