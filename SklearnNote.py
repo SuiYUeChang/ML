@@ -31,3 +31,13 @@ reg.coef_
 #array([ 0.34545455,  0.34545455])
 reg.intercept_ 
 #0.13636...
+
+## Setting the regularization parameter: generalized Cross-Validation
+from sklearn import linear_model
+reg = linear_model.RidgeCV(alphas=[0.1, 1.0, 10.0])
+reg.fit([[0, 0], [0, 0], [1, 1]], [0, .1, 1])       
+#RidgeCV(alphas=[0.1, 1.0, 10.0], cv=None, fit_intercept=True, scoring=None,
+  #  normalize=False)
+reg.alpha_                                      
+#0.1
+
